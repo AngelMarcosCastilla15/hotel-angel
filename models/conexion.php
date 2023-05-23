@@ -4,7 +4,7 @@ class Conexion{
 
   private function Conexion(){
     try{
-      $pdo = new PDO("mysql:host=localhost;port=3306;dbname=superhero;charset=UTF8","root","");
+      $pdo = new PDO("mysql:host=localhost;port=3306;dbname=hoteldb;charset=UTF8","root","");
       return $pdo;
     }
     catch(Execption $e){

@@ -2,5 +2,80 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family:system-ui;
+  font-family: system-ui;
+}
+:root{
+  --primary-color : #0099ff;
+  --gray-50: #f8fafc;
+  --gray-100 : #e2e8f0;
+  --gray-500:#64748b;
+  --space: 8px;
+  --radius-sm: 8px;
+  --bg-secondary: white;
+  --bg-primary: #f8fafc;
+}
+
+img{
+  max-width: 100%;
+}
+body{
+  caret-color:  var(--primary-color);
+  background-color: var(--bg-primary);
+}
+label{
+  display: block;
+  margin: .4rem;
+}
+
+input[type="text"],
+input[type="password"]
+{
+  border: none;
+  outline: none;
+  padding:  16px;
+  width: 100%;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--gray-100)
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus
+{
+  border: 1px solid var(--primary-color)
+}
+
+button{
+  border: none;
+  outline: none;
+  background-color: var(--primary-color);
+  width: 100%;
+  padding: calc(var(--space));
+  color: white;
+  font-size: 1.1rem;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+}
+button:hover{
+  opacity: 0.9;
+}
+
+button:active{
+  transform: scale(.99);
+}
+/* 
+input[type="text"],
+input[type="password"]
+{
+  border: none;
+  outline: none;
+  padding: 12px 8px;
+  min-width: 300px;
+} */
+
+.form__group{
+  margin-bottom: 1.5rem;
+}
+
+a{
+  color: #0099ff;
 }

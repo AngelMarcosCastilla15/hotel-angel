@@ -1,5 +1,7 @@
 <?php
-include_once "../models/usuario.model.php"
+session_start();
+include_once "../models/usuario.model.php";
+
 if (isset($_GET['operacion'])) {
 	$user = new User();
 
@@ -13,8 +15,6 @@ if (isset($_GET['operacion'])) {
 			"login" => false,
 			"apellidos" => "",
 			"nombres" => "",
-			"idUsuario" => "",
-			"nombreRol" => "",
 			"mensaje" => "",
 			"email"=> ""
 		];
@@ -22,13 +22,12 @@ if (isset($_GET['operacion'])) {
 		$data = $user->iniciarSesion($_GET['nombreUsuario']);
 		$claveingresada = $_GET['password'];
 		if ($data) {
-			if (password_verify($claveingresada, $data["claveAcceso"])) {
+			if (password_verify($claveingresada, $data["claveacceso"])) {
 				$acceso["login"] = true;
 				$acceso["apellidos"] = $data["apellidos"];
 				$acceso["nombres"] = $data["nombres"];
 				$acceso["email"] = $data["email"];
-				$acceso["idUsuario"] = $data["idUsuario"];
-				$acceso["nombreRol"] = $data["nombreRol"];
+				$acceso["idusuario"] = $data["idusuario"];
 			} else {
 				$acceso["mensaje"] = "Error en la Contraseña por favor verificar";
 			}
@@ -64,6 +63,6 @@ if (isset($_GET['operacion'])) {
 		$data = $user->obtenerUsuario($_GET["idUsuario"]);
 		echo json_encode($data);
 	}
-}
+} 
 
 //qfbuebjdwiddrfal

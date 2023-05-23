@@ -1,24 +1,54 @@
-body{
-  background-color: #f2f2f2;
-  position: relative;
-  height: 100vh;
+.wave {
+  position: fixed;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
 }
 
-body::after, body::before{
-  content: '';
-  position: absolute;
+.container-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 90vh;
+  gap: 5rem;
+  margin-top: -3rem;
+}
+
+.banner-img {
   width: 500px;
-  height: 500px;
+  aspect-ratio: 1/1;
 }
 
-body::before{
-  z-index: 1;
-  top: 0;
-  left: 0;  
+h1 {
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
-body::after{
-  bottom: 0;
-  right: 0;
-  background-color: cyan;
+.form__group {
+  width: 400px;
+}
+
+@media screen and (max-width: 800px) {
+  .container-form {
+    flex-direction: column;
+    gap: 0;
+    margin: 0;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .banner-img {
+    width: 400px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .banner-img {
+    width: 80%;
+    text-align: center;
+  }
+
+  .form__group {
+    width: 280px;
+  }
 }
