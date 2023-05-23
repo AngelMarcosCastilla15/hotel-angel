@@ -5,7 +5,7 @@
   width: 220px;
   bottom: 0;
   background-color: var(--bg-secondary);
-  border-right: 1px solid var(--gray-100);
+  border-right: 1px solid var(--shadow);
 }
 
 body {
@@ -21,7 +21,7 @@ body {
 }
 
 .menu__item {
-  color: var(--gray-500);
+  color: var(--text-color);
 }
 
 .menu_enlace {
@@ -35,7 +35,7 @@ body {
 
 .menu_enlace:hover {
   opacity: 0.9;
-  background-color: var(--gray-50);
+  background-color: var(--hover);
 }
 
 .menu__item.active {
@@ -61,10 +61,11 @@ body {
   margin: 1rem 0;
   padding: calc(var(--space) * 2);
   background-color: var(--bg-secondary);
-  box-shadow: 0 0 15px var(--gray-100);
+  border: 1px solid var(--shadow);
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border-radius: 9px;
 }
 
 .header__right{
@@ -72,6 +73,62 @@ body {
   align-items: center;
   gap: 1rem;
 }
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 38px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 13px;
+  width: 13px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  transform: translateX(17px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
 @media screen and (max-width: 700px) {
   body{
     padding: 10px;
@@ -117,5 +174,9 @@ body {
 
   .menu__item.active::after {
     display: none;
+  }
+
+  .header__right{
+    gap: 0.4rem;
   }
 }

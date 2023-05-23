@@ -1,51 +1,71 @@
-*{
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: system-ui;
+  font-family: 'Poppins', sans-serif, system-ui;
 }
-:root{
-  --primary-color : #0099ff;
+
+:root {
+  --primary-color: #0099ff;
   --gray-50: #f8fafc;
-  --gray-100 : #f1f5f9;
+  --gray-100: #f1f5f9;
   --gray-200: #e2e8f0;
-  --gray-500:#64748b;
+  --gray-500: #64748b;
+  --gray-600: #020617;
+  --gray-700: #0f172a;
   --space: 8px;
   --radius-sm: 8px;
   --bg-secondary: white;
   --bg-primary: #f8fafc;
+  --shadow: var(--gray-100);
+  --text-color: var(--gray-500);
+  --hover: var(--gray-50);
+  --black: #000;
 }
 
-img{
+html.dark {
+  --bg-primary: #0f172a;
+  --bg-secondary: #111827;
+  --shadow: #1e293b;
+  --text-color: white;
+  --hover: var(--gray-600);
+  --primary-color: #40b4fb;
+
+}
+
+img {
   max-width: 100%;
 }
-body{
-  caret-color:  var(--primary-color);
+
+body {
+  caret-color: var(--primary-color);
   background-color: var(--bg-primary);
+  color: var(--text-color);
 }
-label{
+
+label {
   display: block;
   margin: .4rem;
 }
 
 input[type="text"],
-input[type="password"]
-{
+input[type="password"] {
   border: none;
   outline: none;
-  padding:  16px;
+  padding: 16px;
   width: 100%;
   border-radius: var(--radius-sm);
   border: 1px solid var(--gray-100)
 }
 
 input[type="text"]:focus,
-input[type="password"]:focus
-{
+input[type="password"]:focus {
   border: 1px solid var(--primary-color)
 }
 
-button{
+button {
   border: none;
   outline: none;
   background-color: var(--primary-color);
@@ -56,13 +76,15 @@ button{
   border-radius: var(--radius-sm);
   cursor: pointer;
 }
-button:hover{
+
+button:hover {
   opacity: 0.9;
 }
 
-button:active{
+button:active {
   transform: scale(.99);
 }
+
 /* 
 input[type="text"],
 input[type="password"]
@@ -73,10 +95,10 @@ input[type="password"]
   min-width: 300px;
 } */
 
-.form__group{
+.form__group {
   margin-bottom: 1.5rem;
 }
 
-a{
+a {
   color: #0099ff;
 }

@@ -9,3 +9,16 @@ export const getCurrentLocation = () => {
   const currentLocation = pathname.split("/").pop()
   return deleteExtension(currentLocation)
 }
+
+export const setThemeLocalstorage = (theme) =>{
+  localStorage.setItem("theme", theme )
+}
+
+export const getThemeLocalstorage = () => {
+  try {
+    const theme = localStorage.getItem("theme")
+    return theme
+  } catch (error) {
+    return "ligth"
+  }
+}

@@ -7,11 +7,16 @@ if (!isset($_SESSION["seguridad"]) || !$_SESSION["seguridad"]["login"]) {
 <header class="header ">
 
   <div>
-    Bienvenido(a) :
+    HOLA:
     <?php echo $_SESSION["seguridad"]["nombres"] . " " . $_SESSION["seguridad"]["apellidos"] ?>
   </div>
   <div class="header__right">
-    <!-- <button>theme</button> -->
+    <div>
+      <label class="switch">
+        <input type="checkbox" id="toggleTheme">
+        <span class="slider round"></span>
+      </label>
+    </div>
     <a href="../controllers/user.controller.php?operacion=cerrarSesion" aria-label="Cerrar session">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
         stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"

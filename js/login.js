@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .then(data => {
         console.log(data)
         if (data.login) {
-          location.href = "./views/estadistica.php"
+          location.href = "./views/estadisticas.php"
         }else{
           /* */
           Toastify({

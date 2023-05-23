@@ -1,7 +1,7 @@
 <?php
 session_start();
 if (isset($_SESSION["seguridad"]) && $_SESSION["seguridad"]["login"]) {
-  header("Location:./views/principal.php");
+  header("Location:./views/estadisticas.php");
 }
 ?>
 
