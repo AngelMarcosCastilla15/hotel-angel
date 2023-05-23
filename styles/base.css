@@ -7,7 +7,8 @@
 :root{
   --primary-color : #0099ff;
   --gray-50: #f8fafc;
-  --gray-100 : #e2e8f0;
+  --gray-100 : #f1f5f9;
+  --gray-200: #e2e8f0;
   --gray-500:#64748b;
   --space: 8px;
   --radius-sm: 8px;

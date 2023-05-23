@@ -1,33 +1,121 @@
-.aside{
+.aside {
   position: fixed;
   top: 0;
   left: 0;
   width: 220px;
   bottom: 0;
   background-color: var(--bg-secondary);
+  border-right: 1px solid var(--gray-100);
 }
 
-.main{
-  padding: 0 calc(250px + (var(--space) * 2));
+body {
+  padding-right: 3rem;
+  padding-left: calc(230px + (var(--space) * 2));
 }
 
-.menu{
+.menu {
   padding-top: 5rem;
   display: flex;
   list-style: none;
   flex-direction: column;
 }
 
-.menu_enlace{
+.menu__item {
+  color: var(--gray-500);
+}
+
+.menu_enlace {
   padding: 1rem;
   display: flex;
   align-items: center;
   gap: 1rem;
-  color : var(--gray-500);
+  color: currentColor;
   text-decoration: none;
 }
 
-.menu_enlace:hover{
+.menu_enlace:hover {
   opacity: 0.9;
   background-color: var(--gray-50);
+}
+
+.menu__item.active {
+  position: relative;
+  color: var(--primary-color);
+}
+
+.menu__item.active::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background: var(--primary-color);
+  width: calc(var(--space) - 2px);
+  bottom: 0;
+  border-top-right-radius: var(--space);
+  border-bottom-right-radius: var(--space)
+}
+
+
+.header {
+  margin: 1rem 0;
+  padding: calc(var(--space) * 2);
+  background-color: var(--bg-secondary);
+  box-shadow: 0 0 15px var(--gray-100);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__right{
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+@media screen and (max-width: 700px) {
+  body{
+    padding: 10px;
+    padding-bottom: 0;
+    font-size: 14px;
+  }
+  .header{
+    margin:  0;
+    margin-bottom: 1rem;
+  }
+  .aside {
+    all: unset;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 50px;
+    border-top: 1px solid var(--gray-100);
+  }
+
+  .menu {
+    flex-direction: row;
+    align-items: center;
+    padding: 0;
+  }
+
+  .menu_enlace {
+    padding: 8px;
+    padding: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0;
+    font-size: 13px;
+  }
+
+.menu_enlace svg{
+  width: 18px;
+}
+  .menu__item {
+    flex: 1;
+  }
+
+  .menu__item.active::after {
+    display: none;
+  }
 }

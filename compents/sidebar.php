@@ -1,27 +1,15 @@
-<?php
-session_start();
-if (!isset($_SESSION["seguridad"]) || !$_SESSION["seguridad"]["login"]) {
-  header("Location:../index.php");
-}
-?>
-
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="../styles/base.css" />
-  <link rel="stylesheet" href="../styles/main.css" />
-</head>
-
-<body>
-  <aside class="aside">
+<aside class="aside">
     <ul class="menu">
-      <li class="menu__item">
-        <a href="" class="menu_enlace">
+      <li class="menu__item" data-url="estadisticas">
+        <a href="./estadisticas.php" class="menu_enlace">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="feather feather-activity">
+            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+          </svg>Estadísticas</a>
+      </li>
+      <li class="menu__item" data-url="reservacion">
+        <a href="./reservacion.php" class="menu_enlace">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
             class="feather feather-home">
@@ -29,8 +17,8 @@ if (!isset($_SESSION["seguridad"]) || !$_SESSION["seguridad"]["login"]) {
             <polyline points="9 22 9 12 15 12 15 22"></polyline>
           </svg> reservaciones</a>
       </li>
-      <li class="menu__item">
-        <a href="" class="menu_enlace">
+      <li class="menu__item"  data-url="reportes">
+        <a href="./reportes.php" class="menu_enlace">
 
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -41,16 +29,7 @@ if (!isset($_SESSION["seguridad"]) || !$_SESSION["seguridad"]["login"]) {
           reportes
         </a>
       </li>
-      <li class="menu__item">
-        <a href="" class="menu_enlace">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            class="feather feather-activity">
-            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-          </svg>Gráficos</a>
-          
-      </li>
-      <li class="menu__item">
+      <li class="menu__item" data-url="">
         <a href="" class="menu_enlace">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
@@ -65,11 +44,3 @@ if (!isset($_SESSION["seguridad"]) || !$_SESSION["seguridad"]["login"]) {
       </li>
     </ul>
   </aside>
-
-  <main class="main">
-    mainadsadsad Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab et quaerat vel ducimus quo dolores iusto
-    aut maiores. Eius corrupti officiis non blanditiis fugiat numquam, commodi nulla dolorum aut quidem.
-  </main>
-</body>
-
-</html>

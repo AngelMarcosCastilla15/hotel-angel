@@ -1,6 +1,6 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const $ = selector => document.querySelector(selector)
+import {$} from "./utils.js"
 
+document.addEventListener("DOMContentLoaded", () => {
   const $form = $("#formLogin")
 
   // ======== functions =============
@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", () => {
       .then(data => {
         console.log(data)
         if (data.login) {
-          location.href = "./views/principal.php"
+          location.href = "./views/estadistica.php"
         }else{
           /* */
           Toastify({
