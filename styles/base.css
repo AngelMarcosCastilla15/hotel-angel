@@ -23,6 +23,12 @@
   --text-color: var(--gray-500);
   --hover: var(--gray-50);
   --black: #000;
+  --red-text : #FFF5F5;
+  --red-bg:#9B2C2C;
+  --orange-text:#C05621;
+  --orange-bg: #FFFAF0;
+  --green-bg : #F0FFF4;
+  --green-text: #276749;
 }
 
 html.dark {
@@ -85,6 +91,9 @@ button:active {
   transform: scale(.99);
 }
 
+.title{
+  margin: 2rem 0;
+}
 /* 
 input[type="text"],
 input[type="password"]

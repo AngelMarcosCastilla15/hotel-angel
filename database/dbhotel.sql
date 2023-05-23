@@ -24,14 +24,6 @@ CREATE TABLE usuarios (
 	CONSTRAINT fk_idpersona_usuario FOREIGN KEY (idpersona) REFERENCES personas(idpersona)
 )ENGINE=INNODB;
 
-CREATE TABLE servicios
-(
-	idservicio			INT AUTO_INCREMENT PRIMARY KEY,
-	nombreservicio		VARCHAR(50),
-	descripcion			VARCHAR(300),
-	
-	CONSTRAINT uk_nombreservicio_personas UNIQUE(nombreservicio)
-)ENGINE=INNODB;
 
 CREATE TABLE clasificaciones(
 	idclasificacion			INT AUTO_INCREMENT PRIMARY KEY,
@@ -40,9 +32,31 @@ CREATE TABLE clasificaciones(
 	CONSTRAINT uk_nombre_clasificaciones UNIQUE (nombreclasificacion)
 )ENGINE=INNODB;
 
+CREATE TABLE habitaciones(
+	idhabitacion			INT AUTO_INCREMENT PRIMARY KEY,
+	estadohabitacion 		VARCHAR(90) NOT NULL,
+	precio					DECIMAL(7,2) NOT NULL,
+	idclasificacion		INT NOT NULL
+	CONSTRAINT fk_idclasificacion_habitaciones FOREIGN KEY (idclasificacion) REFERENCES clasificaciones(idhabitacion)
+)ENGINE=INNODB;
+
+
 /*inserciones de datos*/
-INSERT INTO personas(nombres, apellidos, dni, celular)
-VALUES('ANGEL', 'MARCOS CASTILLA', '73963911', NULL);
+INSERT INTO personas(nombres, apellidos, dni, celular) VALUES 
+('MARIA', 'MARTINEZ MATETO','11887798',NULL),
+('JOSE','SANDOVAL CASAS', '12537521', NULL),
+('JOEL', 'MARCELO CASTILLA', '12345543', NULL),
+('FRANCO', 'TASAYCO MUNAYCO', '10045543',NULL),
+('SANDRA', 'BARRIOS SALVATIERRA', '12245540', NULL),
+('CARLINA', 'RODRIGUEZ CASAS', '12345540', NULL),
+('PIERINA', 'ROJAS SARAVIA', '00245540', NULL),
+('SOLYMAR', 'DAVALOS SARAVIA', '99245540', NULL),
+('AMBAR', 'CORDOBA TASAYCO', '67245540', NULL),
+('LUIS', "ALVARADO ROSALES",'12097865', NULL),
+('MARBELLA', "CASTAÑEDA YOTUN",'66097865', NULL),
+('ANGEL', 'MARCOS CASTILLA', '73963911', NULL);
+
+SELECT * FROM PERSONAS
 
 /*1-6*/
 INSERT INTO usuarios(idpersona, nombreusuario, claveacceso, email)
